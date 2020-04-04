@@ -6,4 +6,4 @@ before_install:
   - docker build -t ozubov/docker-study07 -f Dockerfile.dev .
 
 script:
-  - docer run ozubov/docker-study07 npm run test -- --coverage
+  - docker run -e CI=true ozubov/docker-study07 npm run test -- --coverage
