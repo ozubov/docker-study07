@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ozubov/docker-study07 -f Dockerfile.dev .
+
+script:
+  - docer run -e CI=true ozubov/docker-study07 npm run test -- --coverage
